@@ -1,0 +1,6 @@
+---
+- name: Download toolchain
+  unarchive:
+    dest: "{{ toolchain_dest }}"
+    remote_src: true
+    src: "{{ toolchain_url }}"
