@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # rubocop:disable LineLength
 
 describe command('/opt/java/jdk5/bin/java -version') do
