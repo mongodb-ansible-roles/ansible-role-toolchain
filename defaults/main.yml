@@ -1,3 +1,4 @@
 ---
-toolchain_dest: /opt
 src: ""
+toolchain_dest: /opt
+toolchain_list_files: false
