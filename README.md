@@ -16,6 +16,7 @@ Role Variables
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
 | toolchain\_dest | Destination to install toolchain | string | /opt | yes |
+| toolchain\_list\_files | Sets toolchain\_top\_level\_directory variable to be used by other toolchain roles for destination directory creation | string | "false" | yes |
 | toolchain\_url | URL of toolchain tarball | string | "" | no |
 
 Dependencies
