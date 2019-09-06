@@ -11,4 +11,4 @@
 - name: Pass file contents if list files is true
   set_fact:
     toolchain_top_level_directory: "{{ toolchain_archive_contents.files[0] }}"
-  when: toolchain_list_files == true
+  when: toolchain_list_files == true and toolchain_archive_contents.changed
