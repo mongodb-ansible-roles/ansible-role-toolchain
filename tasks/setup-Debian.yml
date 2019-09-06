@@ -1,10 +1,11 @@
 ---
 - name: Download toolchain
   unarchive:
+    creates: "{{ toolchain_creates_directory | default(omit) }}"
     dest: "{{ toolchain_dest }}"
+    list_files: "{{ toolchain_list_files }}"
     remote_src: true
     src: "{{ toolchain_url }}"
-    list_files: "{{ toolchain_list_files }}"
   register: toolchain_archive_contents
 
 - name: Pass file contents if list files is true
