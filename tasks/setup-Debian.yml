@@ -8,7 +8,11 @@
     src: "{{ toolchain_url }}"
   register: toolchain_archive_contents
 
+  # This task sets the toolchain_top_level_directory variable for downstream toolchain roles
+  # It allows the toolchain roles to know the contents of the extracted tarballs
 - name: Pass file contents if list files is true
   set_fact:
     toolchain_top_level_directory: "{{ toolchain_archive_contents.files[0] }}"
-  when: toolchain_list_files == true and toolchain_archive_contents.changed
+  when:
+    - toolchain_list_files
+    - toolchain_archive_contents.changed
