@@ -1,5 +1,6 @@
 ---
 - name: Download toolchain
+  become: true
   unarchive:
     creates: "{{ toolchain_creates_directory | default(omit) }}"
     dest: "{{ toolchain_dest }}"
