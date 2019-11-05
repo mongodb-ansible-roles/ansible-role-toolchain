@@ -1,25 +1,37 @@
 ---
+- name: Check if toolchain is alredy installed
+  stat:
+    path: "{{ toolchain_final_dest }}"
+  register: final_dest
+
+- name: Check version file if toolchain is installed
+  stat:
+    path: "{{ toolchain_final_dest }}/toolchain_version"
+  register: version_file
+  when:
+    - final_dest.stat.exists
+
+- name: Get toolchain version if installed
+  command: cat {{ toolchain_final_dest }}/toolchain_version
+  register: version_value
+  changed_when: false
+  when:
+    - version_file.stat.exists | default(false)
+
 - name: Download toolchain
   become: true
   unarchive:
     creates: "{{ toolchain_creates_directory | default(omit) }}"
-    dest: "{{ toolchain_dest }}"
-    list_files: "{{ toolchain_list_files }}"
+    dest: "{{ toolchain_unpack_dest }}"
+    list_files: true
     remote_src: true
     src: "{{ toolchain_url }}"
   register: toolchain_archive_contents
+  when:
+    - version_value.stdout | default("") != toolchain_version
 
-  # This task sets the toolchain_top_level_directory variable for downstream toolchain roles
-  # It allows the toolchain roles to know the contents of the extracted tarballs
-- name: Pass file contents if list files is true
+- name: Pass file contents
   set_fact:
     toolchain_top_level_directory: "{{ toolchain_archive_contents.files[0] }}"
   when:
-    - toolchain_list_files
     - toolchain_archive_contents.changed
-
-- include_tasks: setup-Debian.yml
-  when: ansible_os_family == "Debian"
-
-- include_tasks: setup-Darwin.yml
-  when: ansible_os_family == "Darwin"
