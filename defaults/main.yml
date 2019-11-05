@@ -1,4 +1,4 @@
 ---
-src: ""
-toolchain_dest: /opt
-toolchain_list_files: false
+toolchain_unpack_dest: /tmp
+toolchain_final_dest: ""
+toolchain_version: ""
