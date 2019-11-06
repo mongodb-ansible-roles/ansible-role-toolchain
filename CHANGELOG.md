@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.0.0...v1.1.0) (2019-11-06)
+
+
+### Bug Fixes
+
+* Removed empty task files ([7ddc8e7](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/7ddc8e73d57ae323aad4ee43096a13fc25fbeab2))
+* Updated variables names ([fa85caa](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/fa85caa29e40733e8ff7679a5d8e0effe6a1cef3))
+* Use random string instead of empty string ([4c32555](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/4c32555b13be2191295c928bca7b2da4c74de1ae))
+
+
+### Features
+
+* Added logic to check if new toolchain needed ([a1f6f47](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/a1f6f47e3427ce714eb59430d525ecc426f2fa98))
+
 # 1.0.0 (2019-10-21)
 
 
