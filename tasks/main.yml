@@ -28,7 +28,7 @@
     src: "{{ toolchain_url }}"
   register: toolchain_archive_contents
   when:
-    - version_value.stdout | default("") != toolchain_version
+    - version_value.stdout | default("none") != toolchain_version
 
 - name: Pass file contents
   set_fact:
