@@ -5,4 +5,4 @@
   roles:
     - role: ansible-role-toolchain
       vars:
-        toolchain_url: https://s3.amazonaws.com/boxes.10gen.com/build/toolchain-drivers/mongo-java-driver/java-toolchain-linux_x64-684d8a531d064469d4ca29e831e5929420e486d6.tar.gz  # noqa 204
+        toolchain_url: https://ansible-molecule-test.s3.amazonaws.com/test_javatoolchain.tar.gz  # noqa 204
