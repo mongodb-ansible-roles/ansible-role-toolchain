@@ -18,7 +18,7 @@
   when:
     - version_file.stat.exists | default(false)
 
-- name: Download toolchain
+- name: Download toolchain from {{ toolchain_url }}
   become: true
   unarchive:
     creates: "{{ toolchain_creates_directory | default(omit) }}"
@@ -26,6 +26,8 @@
     list_files: true
     remote_src: true
     src: "{{ toolchain_url }}"
+  async: "{{ toolchain_async | default(omit) }}"
+  poll: "{{ toolchain_poll | default(omit) }}"
   register: toolchain_archive_contents
   when:
     - version_value.stdout | default("none") != toolchain_version
