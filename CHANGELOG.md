@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.1.0...v1.2.0) (2019-11-07)
+
+
+### Features
+
+* Adding async and poll to unarchive task ([be94de3](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/be94de3361d9d5a1b0ec3adc9badd5b6c22e6494))
+
 # [1.1.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.0.0...v1.1.0) (2019-11-06)
 
 
