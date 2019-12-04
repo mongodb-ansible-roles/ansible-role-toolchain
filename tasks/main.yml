@@ -16,6 +16,8 @@
   register: version_value
   changed_when: false
   when:
+    - final_dest.stat.exists
+    - version_file is defined
     - version_file.stat.exists | default(false)
 
 - name: Download toolchain from {{ toolchain_url }}
