@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.2.0...v1.2.1) (2019-12-05)
+
+
+### Bug Fixes
+
+* Fixing conditional to check version file ([babf693](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/babf693c38b6ad87141b901b6eb2fde61553b5ce))
+
 # [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.1.0...v1.2.0) (2019-11-07)
 
 
