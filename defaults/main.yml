@@ -2,3 +2,4 @@
 toolchain_unpack_dest: /tmp
 toolchain_final_dest: ""
 toolchain_version: ""
+toolchain_delete_old_final_dest: false

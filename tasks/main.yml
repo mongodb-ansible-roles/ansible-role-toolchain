@@ -20,6 +20,13 @@
     - version_file is defined
     - version_file.stat.exists | default(false)
 
+- name: Delete old toolchain if specified
+  become: true
+  file:
+    path: "{{ toolchain_final_dest }}"
+    state: absent
+  when: toolchain_delete_old_final_dest
+
 - name: Download toolchain from {{ toolchain_url }}
   become: true
   unarchive:
