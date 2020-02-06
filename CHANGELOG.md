@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.3.0...v1.3.1) (2020-02-06)
+
+
+### Bug Fixes
+
+* Check version before deleting old toolchain ([1f7f6a5](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/1f7f6a5a8a436f74a9343136592bf74f01103a21))
+
 # [1.3.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.2.1...v1.3.0) (2020-02-06)
 
 
