@@ -25,7 +25,9 @@
   file:
     path: "{{ toolchain_final_dest }}"
     state: absent
-  when: toolchain_delete_old_final_dest
+  when:
+    - toolchain_delete_old_final_dest
+    - version_value.stdout | default("none") != toolchain_version
 
 - name: Download toolchain from {{ toolchain_url }}
   become: true
