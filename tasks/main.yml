@@ -1,5 +1,5 @@
 ---
-- name: Check if toolchain is alredy installed
+- name: Check if toolchain is alredy installed at {{ toolchain_final_dest }}
   stat:
     path: "{{ toolchain_final_dest }}"
   register: final_dest
