@@ -1,8 +1,8 @@
 ---
-- become: true
-  name: Converge
+- name: Converge
   hosts: all
   roles:
     - role: ansible-role-toolchain
       vars:
         toolchain_url: https://ansible-molecule-test.s3.amazonaws.com/test_javatoolchain.tar.gz  # noqa 204
+        toolchain_delete_old_final_dest: true
