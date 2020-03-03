@@ -37,6 +37,7 @@
     list_files: true
     remote_src: true
     src: "{{ toolchain_url }}"
+    validate_certs: "{{ toolchain_validate_certs }}"
   async: "{{ toolchain_async | default(omit) }}"
   poll: "{{ toolchain_poll | default(omit) }}"
   register: toolchain_archive_contents

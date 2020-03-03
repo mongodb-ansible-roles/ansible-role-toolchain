@@ -21,6 +21,7 @@ Role Variables
 | `toolchain_list_files` | Sets toolchain\_top\_level\_directory variable to be used by other toolchain roles for destination directory creation | boolean | false | yes |
 | `toolchain_ur`l | URL of toolchain tarball | string | "" | no |
 | `toolchain_delete_old_final_dest`l | Specify whether to delete the old toolchain first before downloading the new one. This can be used to install a new toolchain on a host that has space restrictions. Do not use this on static hosts as it could leave the host without the old and new toolchain installed | boolean | false | no |
+| `toolchain_validate_certs` | Validate HTTPS or not | boolean | `true` | no
 
 Dependencies
 ------------
