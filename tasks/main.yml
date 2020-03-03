@@ -21,7 +21,6 @@
     - version_file.stat.exists | default(false)
 
 - name: Delete old toolchain if specified
-  become: true
   file:
     path: "{{ toolchain_final_dest }}"
     state: absent
@@ -30,7 +29,6 @@
     - version_value.stdout | default("none") != toolchain_version
 
 - name: Download toolchain from {{ toolchain_url }}
-  become: true
   unarchive:
     creates: "{{ toolchain_creates_directory | default(omit) }}"
     dest: "{{ toolchain_unpack_dest }}"
