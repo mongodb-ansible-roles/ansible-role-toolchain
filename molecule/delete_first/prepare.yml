@@ -1,0 +1,9 @@
+---
+- name: Prepare
+  gather_facts: false
+  hosts: rhel6
+  tasks:
+    - name: Install packages
+      yum:
+        name:
+          - http://rpmfind.net/linux/centos/6.10/os/x86_64/Packages/tar-1.23-15.el6_8.x86_64.rpm
