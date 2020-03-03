@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.3.1...v1.4.0) (2020-03-03)
+
+
+### Bug Fixes
+
+* Added missing requirements for molecule3 ([7d22fcc](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/7d22fcc83c6167814774978cd59a7dd267ec6fe8))
+
+
+### Features
+
+* Allow user to specify validate_certs ([77add62](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/77add62b80a64abae39e0ca0528f4acb262cddf7))
+
 ## [1.3.1](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.3.0...v1.3.1) (2020-02-06)
 
 
