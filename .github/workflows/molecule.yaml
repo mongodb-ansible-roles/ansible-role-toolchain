@@ -24,4 +24,3 @@ jobs:
 name: Molecule Test
 'on':
   - push
-  - pull_request
