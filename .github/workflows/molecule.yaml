@@ -17,7 +17,11 @@ jobs:
           login-server: registry.redhat.io
           username: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
           password: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
-      - run: molecule test --all
+      - run: molecule test -s default
+        env:
+          REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
+          REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
+      - run: molecule test -s delete_first
         env:
           REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
           REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
