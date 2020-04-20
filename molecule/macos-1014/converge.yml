@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-role-toolchain"
+      include_role:
+        name: "ansible-role-toolchain"
+      vars:
+        toolchain_url: https://ansible-molecule-test.s3.amazonaws.com/test_javatoolchain.tar.gz  # noqa 204
+        toolchain_final_dest: /tmp/java
+        toolchain_creates_directory: /tmp/java
