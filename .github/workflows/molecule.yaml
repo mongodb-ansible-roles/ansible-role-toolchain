@@ -15,16 +15,16 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: registry.redhat.io
-          username: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
-          password: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
+          username: &rhr_user ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
+          password: &rhr_pass ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
       - run: molecule test
         env:
-          REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
-          REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
+          REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME: *rhr_user
+          REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD: *rhr_pass
       - run: molecule test -s delete_first
         env:
-          REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
-          REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
+          REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME: *rhr_user
+          REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD: *rhr_pass
 name: Molecule Test
 'on':
   - push
