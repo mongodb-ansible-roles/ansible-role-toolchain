@@ -8,7 +8,7 @@ driver:
     ansible_connection_options:
       ansible_connection: local
 platforms:
-  - name: macos-1014-local
+  - name: macos-catalina-local
 provisioner:
   name: ansible
 verifier:
