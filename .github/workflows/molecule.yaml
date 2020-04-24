@@ -17,7 +17,7 @@ jobs:
           login-server: registry.redhat.io
           username: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
           password: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
-      - run: molecule test -s default
+      - run: molecule test
         env:
           REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME }}
           REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD: ${{ secrets.REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD }}
