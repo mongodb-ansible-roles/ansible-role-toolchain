@@ -39,6 +39,8 @@
   async: "{{ toolchain_async | default(omit) }}"
   poll: "{{ toolchain_poll | default(omit) }}"
   register: toolchain_archive_contents
+  environment:
+    PATH: /usr/local/bin:{{ ansible_env.PATH }}
   when:
     - version_value.stdout | default("none") != toolchain_version
 

@@ -8,5 +8,19 @@ galaxy_info:
     - name: debian
       versions:
         - buster
+        - stretch
+    - name: ubuntu
+      versions:
+        - focal
+        - bionic
+        - xenial
+    - name: el
+      versions:
+        - 6
+        - 7
+        - 8
+    - name: macos
+      versions:
+        - 10.14
   galaxy_tags:
     - toolchain

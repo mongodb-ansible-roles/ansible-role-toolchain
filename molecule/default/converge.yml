@@ -6,3 +6,4 @@
       vars:
         toolchain_url: https://ansible-molecule-test.s3.amazonaws.com/test_javatoolchain.tar.gz  # noqa 204
         toolchain_final_dest: /opt/java
+        toolchain_creates_directory: /opt/java

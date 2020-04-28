@@ -23,10 +23,16 @@ Role Variables
 | `toolchain_delete_old_final_dest`l | Specify whether to delete the old toolchain first before downloading the new one. This can be used to install a new toolchain on a host that has space restrictions. Do not use this on static hosts as it could leave the host without the old and new toolchain installed | boolean | false | no |
 | `toolchain_validate_certs` | Validate HTTPS or not | boolean | `true` | no
 
-Dependencies
-------------
+MacOS Specific Notes
+--------------------
 
-None
+The macos-1014 distro, and Macs in general, have the BSD version of tar installed.
+
+Unfortunately, the [unarchive ansible module](https://docs.ansible.com/ansible/latest/modules/unarchive_module.html) is not compatible with the BSD version of tar.
+
+The GNU version of tar can be installed via `brew install gnu-tar`, which then installs the executable at `/usr/local/bin/tar`.
+
+In order to get ansible to use this executable, you have to specify `/usr/local/bin` first in the $PATH before `/usr/bin`.
 
 Example Playbook
 ----------------
