@@ -21,6 +21,7 @@
     - version_file.stat.exists | default(false)
 
 - name: Delete old toolchain if specified
+  become: true
   file:
     path: "{{ toolchain_final_dest }}"
     state: absent
@@ -29,20 +30,32 @@
     - version_value.stdout | default("none") != toolchain_version
 
 - name: Download toolchain from {{ toolchain_url }}
+  get_url:
+    url: "{{ toolchain_url }}"
+    dest: "{{ toolchain_unpack_dest }}/{{ toolchain_url | basename }}"
+    validate_certs: "{{ toolchain_validate_certs }}"
+    mode: 0750
+  when:
+    - version_value.stdout | default("none") != toolchain_version
+
+- name: Unpack toolchain from {{ toolchain_unpack_dest }}
+  become: true
   unarchive:
     creates: "{{ toolchain_creates_directory | default(omit) }}"
     dest: "{{ toolchain_unpack_dest }}"
     list_files: true
     remote_src: true
-    src: "{{ toolchain_url }}"
-    validate_certs: "{{ toolchain_validate_certs }}"
-  async: "{{ toolchain_async | default(omit) }}"
-  poll: "{{ toolchain_poll | default(omit) }}"
+    src: "{{ toolchain_unpack_dest }}/{{ toolchain_url | basename }}"
   register: toolchain_archive_contents
   environment:
     PATH: /usr/local/bin:{{ ansible_env.PATH }}
   when:
     - version_value.stdout | default("none") != toolchain_version
+
+- name: Remove the downloaded file
+  file:
+    path: "{{ toolchain_unpack_dest }}/{{ toolchain_url | basename }}"
+    state: "absent"
 
 - name: Pass file contents
   set_fact:
