@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.4.0...v1.5.0) (2020-11-19)
+
+
+### Bug Fixes
+
+* separate download from unarchive ([8745ea5](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/8745ea590a1181e25bc3cfc78d81bfc3c7eb03b6))
+
+
+### Features
+
+* Add macos-catalina support ([#10](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/issues/10)) ([fa61b98](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/fa61b98ea0154e1b10bccd6eda1b29767d3f50df))
+
 # [1.4.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.3.1...v1.4.0) (2020-03-03)
 
 
