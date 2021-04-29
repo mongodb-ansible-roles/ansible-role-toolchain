@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.5.0...v1.5.1) (2021-04-29)
+
+
+### Bug Fixes
+
+* Make list_files optional ([12c82ed](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/commit/12c82edd45492106a0f2521ed49161e16124799e))
+
 # [1.5.0](https://github.com/mongodb-ansible-roles/ansible-role-toolchain/compare/v1.4.0...v1.5.0) (2020-11-19)
 
 
