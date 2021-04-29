@@ -1,6 +1,7 @@
 ---
 toolchain_unpack_dest: /tmp
 toolchain_final_dest: ""
+toolchain_list_files: true
 toolchain_version: ""
 toolchain_delete_old_final_dest: false
 toolchain_validate_certs: true

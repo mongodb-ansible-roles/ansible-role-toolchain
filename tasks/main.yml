@@ -43,7 +43,7 @@
   unarchive:
     creates: "{{ toolchain_creates_directory | default(omit) }}"
     dest: "{{ toolchain_unpack_dest }}"
-    list_files: true
+    list_files: "{{ toolchain_list_files }}"
     remote_src: true
     src: "{{ toolchain_unpack_dest }}/{{ toolchain_url | basename }}"
   register: toolchain_archive_contents
@@ -62,3 +62,4 @@
     toolchain_top_level_directory: "{{ toolchain_archive_contents.files[0] }}"
   when:
     - toolchain_archive_contents.changed
+    - toolchain_list_files
